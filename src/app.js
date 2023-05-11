@@ -4,8 +4,9 @@ const { Server } = require("socket.io")
 const routerViews = require("./routes/views.router.js")
 
 // Init Servers
+const port = process.env.PORT || 8080
 const app = express()
-const httpServer = app.listen(8080, () => console.log("Listening..."))
+const httpServer = app.listen(port, () => console.log("Listening..."))
 const io = new Server(httpServer)
 
 // Config engine templates
